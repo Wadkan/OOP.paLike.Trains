@@ -1,9 +1,6 @@
 package trains;
 
-import java.util.Random;
-
 public class trainWithPeople extends Train {
-    private int cost = 1000;
     private double ticketPrice = 1.5;
     int passangersPerDay;
     int chanceForPunishment;
@@ -13,19 +10,22 @@ public class trainWithPeople extends Train {
         this.passangersPerDay = randPassenger;
     }
 
+    public void setTicketPrice(double extraPriceToAdd){
+        this.ticketPrice += extraPriceToAdd;
+    }
 
+    public int getCost() {
+        return 0;
+    }
+
+    @Override
     public double getRevenuePerMount() {
         return 31 * (getTicketsPerDay() + getTicketsPlusPerDay() + getPunishmentsPerDay());
     }
 
-    private boolean getChanceForPunish() {
-        Random rand = new Random();
-        int randInt = rand.nextInt(100);
-        return randInt < chanceForPunishment ? true : false;
-    }
 
     private double getPunishmentsPerDay() {
-        boolean chanceForPunish = getChanceForPunish();
+        boolean chanceForPunish = super.getChance(chanceForPunishment);
         if (chanceForPunish) {
             return Math.round(passangersPerDay * 0.2) * 6;
         } else {
