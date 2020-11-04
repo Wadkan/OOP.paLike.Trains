@@ -41,6 +41,7 @@ public class Simulator {
         for (int i = 0; i < months; i++) {
             for (Train train : trains) {
                 revenue += train.getRevenuePerMount();
+                System.out.println(String.format("%s -> + %f - %d", train.toString(), train.getRevenuePerMount(), train.getCost()));
                 revenue -= train.getCost();
             }
         }

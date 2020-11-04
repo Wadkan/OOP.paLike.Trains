@@ -15,7 +15,7 @@ public class trainWithPeople extends Train {
     }
 
     public int getCost() {
-        return 0;
+        return cost;
     }
 
     @Override

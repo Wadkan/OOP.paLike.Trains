@@ -18,7 +18,7 @@ public class Freight extends Train {
     }
 
     public int getCost() {
-        return 0;
+        return cost;
     }
 
     @Override
