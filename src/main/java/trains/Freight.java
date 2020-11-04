@@ -3,7 +3,7 @@ package trains;
 public class Freight extends Train {
     private boolean goAbroad;
 
-    Freight(){
+    public Freight(){
         super.cost = 1000;
         this.goAbroad = super.getChance(35);
     }

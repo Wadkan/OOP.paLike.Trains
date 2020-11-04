@@ -1,8 +1,12 @@
 package simulator;
 
+import trains.Freight;
+import trains.Ic;
+import trains.PassangerTrain;
 import trains.Train;
 
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 public class Simulator {
@@ -13,7 +17,7 @@ public class Simulator {
         Train train;
         for (int i=0;i<RandomGenerator(2,5);i++){
             passengers = RandomGenerator(115, 250);
-            train = new Passenger(passengers);
+            train = new PassangerTrain(passengers);
             trains.add(train);
         }
 
@@ -36,7 +40,7 @@ public class Simulator {
 
         for (int i = 0; i < months; i++) {
             for (Train train : trains){
-                revenue += train.getRevenuePerMounth();
+                revenue += train.getRevenuePerMount();
                 revenue -= train.getCost();
             }
         }
