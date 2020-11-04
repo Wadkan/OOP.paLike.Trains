@@ -15,19 +15,19 @@ public class Simulator {
     Simulator() {
         int passengers;
         Train train;
-        for (int i=0;i<RandomGenerator(2,5);i++){
+        for (int i = 0; i < RandomGenerator(2, 5); i++) {
             passengers = RandomGenerator(115, 250);
             train = new PassangerTrain(passengers);
             trains.add(train);
         }
 
-        for (int i=0;i<RandomGenerator(2,5);i++){
+        for (int i = 0; i < RandomGenerator(2, 5); i++) {
             passengers = RandomGenerator(115, 250);
             train = new Ic(passengers);
             trains.add(train);
         }
 
-        for (int i=0;i<RandomGenerator(2,5);i++){
+        for (int i = 0; i < RandomGenerator(2, 5); i++) {
             train = new Freight();
             trains.add(train);
         }
@@ -39,7 +39,7 @@ public class Simulator {
         int months = years * 12;
 
         for (int i = 0; i < months; i++) {
-            for (Train train : trains){
+            for (Train train : trains) {
                 revenue += train.getRevenuePerMount();
                 revenue -= train.getCost();
             }
