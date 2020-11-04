@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class trainWithPeople extends Train {
     private int cost = 1000;
-    private double ticket = 1.5;
+    private double ticketPrice = 1.5;
     int passangersPerDay;
     int chanceForPunishment;
 
@@ -35,11 +35,11 @@ public class trainWithPeople extends Train {
 
 
     private double getTicketsPlusPerDay() {
-        return 0;
+        return Math.round(0.25 * passangersPerDay) * 2;
     }
 
     private double getTicketsPerDay() {
-        return 0;
+        return passangersPerDay * ticketPrice;
     }
 
 
